@@ -45,10 +45,38 @@ node index.js
 
 The server will start listening on port 3001 for DNS queries.
 
-## Example Query
+## Example Queries
 
-Use `dig` to query the server:
+Use `dig` to query the server. Here are some example commands:
+
+### Basic Query
 ```sh
 dig TXT @localhost -p 3001 what.is.2.+.2
 ```
+
+### Get Shorter Output
+Use +short to get just the answer:
+```sh
+dig +short TXT @localhost -p 3001 what.is.the.capital.of.france
+```
+
+### More Example Questions
+```sh
+# Ask for a joke
+dig +short TXT @localhost -p 3001 tell.me.a.joke
+
+# Get a recipe
+dig +short TXT @localhost -p 3001 how.to.make.pancakes
+
+# Math calculations
+dig +short TXT @localhost -p 3001 calculate.15.times.7
+
+# General knowledge
+dig +short TXT @localhost -p 3001 who.was.albert.einstein
+```
+
+### Query Format
+- Replace spaces with dots (.) in your question
+- Use only alphanumeric characters and dots
+- The question should be part of the domain name
 
